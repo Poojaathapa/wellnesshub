@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ContactUs.css">
+    <title>Home</title>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            // Clear any previous error messages
+            const errorMessage = document.getElementById('error-message');
+            errorMessage.textContent = '';
+
+            // Get values from form
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            // Email validation
+            const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+
+            // Validate name (should not be empty)
+            if (name === '') {
+                errorMessage.textContent = 'Please enter your name.';
+                event.preventDefault();
+                return;
+            }
+
+            // Validate email (check format)
+            if (!emailRegex.test(email)) {
+                errorMessage.textContent = 'Please enter a valid email address.';
+                event.preventDefault();
+                return;
+            }
+
+            // Validate message (should not be empty)
+            if (message === '') {
+                errorMessage.textContent = 'Please enter a message.';
+                event.preventDefault();
+                return;
+            }
+
+            // All validations passed, allow form submission
+            alert('Form submitted successfully!');
+        });
+    </script>
+
+</head>
+<body>
+    <div class="header">
+        <h1><a href="registration.html">LOGO</a></h1>
+
+        <ul class="items">
+            <li><a href="HomePage.html">Home</a></li>
+            <li><a href="Resources.html">Resources</a></li>
+            <li><a href="MoodTracker.html">Mood Tracker</a></li>
+            <li><a href="Quizzes.html">Quizzes</a></li>
+            <li><a href="Blogs.html">Blogs</a></li>
+            <li><a href="AboutUs.html">About Us</a></li>
+            <li><a href="ContactUs.html">Contact Us</a></li>
+        </ul>
+
+        <p><input type="text" placeholder="search" class="search"></p>
+    </div>
+
+
+    <section class="contact-section">
+        <div class="contact-form">
+            <h2>Get in Touch</h2>
+            <form id="contactForm" action="#" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit" class="cta-button">Submit</button>
+                <p id="error-message" style="color:red;"></p>
+            </form>
+        </div>
+
+        <div class="contact-info">
+            <h2>Contact Information</h2>
+            <p>If you have any questions, feel free to reach out to us through the following methods:</p>
+            <p><strong>Email:</strong> info@wellnesshub.com</p>
+            <p><strong>Phone:</strong> +123 456 7890</p>
+            <p><strong>Address:</strong> 123 Wellness St, Health City, HC 12345</p>
+            <p>Our support team is available Monday to Friday from 9 AM to 5 PM.</p>
+        </div>
+    </section>
+    
+
+
+    <div class="footer">
+        <p>&copy; 2024 Wellness Hub. All rights reserved.</p>
+        <p>Contact: info@wellnesshub.com | Phone: +123 456 7890</p>
+        <p>Follow us: 
+            <a href="#">Facebook</a> | 
+            <a href="#">Twitter</a> | 
+            <a href="#">Instagram</a>
+        </p>
+    </div>
+    
+</body>
+</html>

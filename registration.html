@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="registration.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Login</title>
+    <script>
+        function showAlert() {
+            alert("Registration button clicked!");
+        }
+
+        function togglePassword() {
+            var passwordField = document.getElementById("password");
+            var toggleIcon = document.getElementById("toggleIcon");
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                toggleIcon.classList.remove("fa-eye");
+                toggleIcon.classList.add("fa-eye-slash");
+            } else {
+                passwordField.type = "password";
+                toggleIcon.classList.remove("fa-eye-slash");
+                toggleIcon.classList.add("fa-eye");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <h1><a href="registration.html">LOGO</a></h1>
+
+        <ul class="items">
+            <li><a href="HomePage.html">Home</a></li>
+            <li><a href="Resources.html">Resources</a></li>
+            <li><a href="MoodTracker.html">Mood Tracker</a></li>
+            <li><a href="Quizzes.html">Quizzes</a></li>
+            <li><a href="Blogs.html">Blogs</a></li>
+            <li><a href="AboutUs.html">About Us</a></li>
+            <li><a href="ContactUs.html">Contact Us</a></li>
+        </ul>
+
+        <p><input type="text" placeholder="search" class="search"></p>
+    </div>
+
+
+    <div class="content">
+        <ul>
+            <li class="left-section">
+                <h2>Wellness Hub</h2>
+                <p>Lorem ipsum dolor sit amet...</p>
+            </li>
+    
+            <li class="right-section">
+                <h3>Register</h3>
+                <p><input type="text" placeholder="Username"></p>
+                
+                <!-- Add id="password" to the input field -->
+                <div class="password-container">
+                    <p><input type="password" id="password" placeholder="Password"></p>
+                    <span class="toggle-password" onclick="togglePassword()">
+                        <i id="toggleIcon" class="fas fa-eye"></i>
+                    </span>
+                </div>
+
+                <button onclick="showAlert()">Register</button>
+            </li>
+        </ul>
+    </div>
+
+
+    <div class="footer">
+        <p>&copy; 2024 Wellness Hub. All rights reserved.</p>
+        <p>Contact: info@wellnesshub.com | Phone: +123 456 7890</p>
+        <p>Follow us: 
+            <a href="#">Facebook</a> | 
+            <a href="#">Twitter</a> | 
+            <a href="#">Instagram</a>
+        </p>
+    </div>
+    
+</body>
+</html>
